@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+header{
+    background-color: #00802f;
+}
+img.hsg_logo{
+    width: 300px;
+    height:auto;
+}
+
+footer{
+    background-color: #00802f;
+}
