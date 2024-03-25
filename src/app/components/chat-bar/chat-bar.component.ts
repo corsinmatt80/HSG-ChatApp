@@ -2,10 +2,11 @@ import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+
 @Component({
   selector: 'app-chat-bar',
   standalone: true,
-  imports: [FormsModule, NgIf],
+  imports: [FormsModule,NgIf],
   templateUrl: './chat-bar.component.html',
   styleUrl: './chat-bar.component.css'
 })
