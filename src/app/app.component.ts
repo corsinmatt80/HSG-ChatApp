@@ -14,3 +14,4 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'chatapp_hsg';
 }
+

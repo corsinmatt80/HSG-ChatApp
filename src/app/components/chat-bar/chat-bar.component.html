@@ -1,19 +1,39 @@
-<textarea 
-    [(ngModel)]="chatMessage" 
-    class="form-control" 
-    placeholder="Nachricht einfügen..."  
-    rows="3"
-    (keyup.enter)="addMessage(chatMessage)"
-    >
-</textarea>
+
+<div style="display: flex;">
+    <div
+        style = "padding-right: 20px;"
+        >
+        <textarea
+            [(ngModel)]="name" 
+            class = "form-control"
+            placeholder="Name einfügen..."
+            rows="1"
+            >
+        </textarea>
+        <textarea 
+            [(ngModel)]="message" 
+            class="form-control" 
+            placeholder="Nachricht einfügen..."  
+            rows="15"
+            >
+        </textarea>
 
 
-<button 
-    (click)="addMessage(chatMessage)" 
-    class="btn btn-primary"
-    [disabled]="!chatMessage">
-    Send!
-</button>
+        <button 
+            class="btn btn-primary"
+            [disabled]="!message || !name"
+            (click)="addToChat(name,message)"
+            >
+            Absenden!
+        </button>
+    </div>
 
-<div *ngIf="errorMessage">{{errorMessage}}</div>
 
+    <div>
+        <div 
+        *ngFor="let msg of messages"
+        style = "padding-top: 5px;">
+            <p class="message"><strong>{{msg.sender}}: </strong>{{msg.message}}</p>
+        </div>
+    </div>
+</div>

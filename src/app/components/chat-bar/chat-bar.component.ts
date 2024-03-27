@@ -1,26 +1,38 @@
-import { NgIf } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+
+
+interface Message{
+  sender:string;
+  message:string;
+}
 
 
 @Component({
   selector: 'app-chat-bar',
   standalone: true,
-  imports: [FormsModule,NgIf],
+  imports: [FormsModule,CommonModule],
   templateUrl: './chat-bar.component.html',
   styleUrl: './chat-bar.component.css'
 })
+
+
+
 export class ChatBarComponent {
-public chatMessage="";
+public message="";
 public errorMessage = "";
-/**
- * addMessage to ChatBox
- */
-public addMessage(message: string): void {
-  if(message.length === 0){
-    this.errorMessage = "Bitte einen Nachricht einfügen!"
+public name = "";
+public messages:Message[] = [];
+
+
+public addToChat(name:string,message:string){
+  const nachricht : Message = {
+    sender: name,
+    message: message
   }
-  alert(message);
+  this.messages.push(nachricht);
+  this.message = "";
 }
 
 }
