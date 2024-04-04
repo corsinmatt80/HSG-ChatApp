@@ -3,21 +3,22 @@ textarea{
 }
 
 p.message {
-    display: flex;
-    align-items: center;
-    max-width: 90%;
-    margin-bottom: 15px;
-    padding: 10px 15px;
-    border-radius: 20px;
-    position: relative;
-    font-size: 16px;
-    line-height: 1.5;
-    background-color: #007bff;
-    color: white;
-  }
+  display: flex;
+  align-items: center;
+  max-width: 90vh;
+  margin-bottom: 15px;
+  padding: 5px 15px;
+  border-radius: 20px;
+  position: relative;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: #00802f;
+  color: white;
+  word-wrap: break-word;
+}
   
-  p.message.other {
-    background-color: #f0f0f0;
-    color: #333;
-  }
-  
+p.message.other {
+  background-color: #f0f0f0;
+  color: #333;
+}
+

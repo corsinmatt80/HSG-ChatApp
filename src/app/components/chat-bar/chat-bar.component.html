@@ -30,10 +30,13 @@
 
 
     <div>
-        <div 
-        *ngFor="let msg of messages"
-        style = "padding-top: 5px;">
-            <p class="message"><strong>{{msg.sender}}: </strong>{{msg.message}}</p>
+        <div *ngFor="let msg of messages" style="padding-top: 10px;">
+            <div>
+                <p class="message">
+                <strong style="display: inline-block;"> {{msg.sender}}:&nbsp;</strong><br>
+                <span>{{msg.message}}</span>
+                </p>
+            </div>
         </div>
     </div>
 </div>
