@@ -1,40 +1,38 @@
-
 <div style="display: flex;">
-    <div
-        style = "padding-right: 20px;"
-        >
-        <textarea
-            [(ngModel)]="name" 
-            class = "form-control"
-            placeholder="Name einfügen..."
-            rows="1"
-            >
-        </textarea>
+    <div style="padding-right: 20px;">
+        <input
+        type="text"
+        [(ngModel)]="name"
+        class="form-control"
+        placeholder="Name einfügen..."
+      />
         <textarea 
             [(ngModel)]="message" 
             class="form-control" 
             placeholder="Nachricht einfügen..."  
             rows="15"
-            >
-        </textarea>
+        ></textarea>
 
+        <div *ngIf="errorMessage" class="alert alert-danger" style="margin-top: 10px;">
+            {{ errorMessage }}
+        </div>
 
         <button 
             class="btn btn-primary"
             [disabled]="!message || !name"
-            (click)="addToChat(name,message)"
-            >
+            (click)="addToChat(name, message)"
+        >
             Absenden!
         </button>
     </div>
 
-
     <div>
         <div *ngFor="let msg of messages" style="padding-top: 10px;">
-            <div>
+            <div class="message-container">
+                <div class="timestamp">{{ msg.timestamp | date: 'dd MMM HH:mm' }}</div>
                 <p class="message">
-                <strong style="display: inline-block;"> {{msg.sender}}:&nbsp;</strong><br>
-                <span>{{msg.message}}</span>
+                    <strong>{{ msg.sender }}:&nbsp;</strong>
+                    {{ msg.message }}
                 </p>
             </div>
         </div>
