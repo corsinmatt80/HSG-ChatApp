@@ -4,6 +4,12 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ChatBarComponent } from './components/chat-bar/chat-bar.component';
 import { Component } from '@angular/core';
 
+interface Message {
+  sender: string;
+  message: string;
+  timestamp: Date;
+}
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -13,5 +19,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'chatapp_hsg';
+  chatHistory: string = '';
+
+  updateHistory(newMessage: Message): void {
+    const messageHtml = `<div><strong>${newMessage.sender}:</strong> ${newMessage.message} <span>${newMessage.timestamp.toLocaleTimeString()}</span></div>`;
+    this.chatHistory += messageHtml; 
+  }
+  
 }
 
