@@ -20,11 +20,5 @@ interface Message {
 export class AppComponent {
   title = 'chatapp_hsg';
   chatHistory: string = '';
-
-  updateHistory(newMessage: Message): void {
-    const messageHtml = `<div><strong>${newMessage.sender}:</strong> ${newMessage.message} <span>${newMessage.timestamp.toLocaleTimeString()}</span></div>`;
-    this.chatHistory += messageHtml; 
-  }
-  
 }
 
