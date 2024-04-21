@@ -1,12 +1,12 @@
 <div style="display: flex;">
-    <div style="padding-right: 20px;">
+    <div style="margin-left: 40px; margin-top:40px; padding-right: 20px;">
         <input
         type="text"
         [(ngModel)]="name"
         class="form-control"
         placeholder="Name einfügen..."
       />
-        <textarea 
+        <textarea style="margin-top: 10px;"
             [(ngModel)]="message" 
             class="form-control" 
             placeholder="Nachricht einfügen..."  
@@ -17,7 +17,7 @@
             {{ errorMessage }}
         </div>
 
-        <button 
+        <button style="margin-top: 20px;"
             class="btn btn-primary"
             [disabled]="!message || !name"
             (click)="addToChat(name, message)"
@@ -27,7 +27,7 @@
     </div>
 
     <div>
-        <div *ngFor="let msg of messages" style="padding-top: 10px;">
+        <div *ngFor="let msg of messages" style="padding-top: 10px;"p>
             <div class="message-container">
                 <div class="timestamp">{{ msg.timestamp | date: 'dd MMM HH:mm' }}</div>
                 <p class="message">
