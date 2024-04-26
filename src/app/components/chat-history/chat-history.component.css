@@ -27,3 +27,8 @@ z
     text-align: right; 
     margin-bottom: 5px; 
 }
+
+.chat-history {
+    height: auto;
+    overflow: hidden;
+}
