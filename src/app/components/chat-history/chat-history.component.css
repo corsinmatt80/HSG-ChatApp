@@ -1,0 +1,29 @@
+p.message {
+    display: inline-block;
+    align-items: center;
+    max-width: 75%;
+    min-width: 10%;
+  
+    margin-bottom: 15px;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #00802f;
+    color: white;
+    word-wrap: break-word;
+  }
+    
+p.message.other {
+    background-color: #f0f0f0;
+    color: #333;
+    text-align: left;
+}
+z
+.timestamp {
+    font-size: 0.75rem; 
+    color: white; 
+    opacity: 0.6; 
+    text-align: right; 
+    margin-bottom: 5px; 
+}

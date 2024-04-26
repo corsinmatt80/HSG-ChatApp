@@ -1,5 +1,10 @@
 <app-header/>
 <main>
-  <app-chat-bar></app-chat-bar>
+  <div style="display: flex">
+  <app-chat-bar
+  (messageToSend)="messageSend($event)"></app-chat-bar>
+  <app-chat-history
+  [history]="chatHistory"></app-chat-history>
+</div>
 </main>
 <app-footer/>

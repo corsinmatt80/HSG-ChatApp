@@ -25,16 +25,4 @@
             Absenden!
         </button>
     </div>
-
-    <div>
-        <div *ngFor="let msg of messages" style="padding-top: 10px;"p>
-            <div class="message-container">
-                <div class="timestamp">{{ msg.timestamp | date: 'dd MMM HH:mm' }}</div>
-                <p class="message">
-                    <strong>{{ msg.sender }}:&nbsp;</strong>
-                    {{ msg.message }}
-                </p>
-            </div>
-        </div>
-    </div>
 </div>
