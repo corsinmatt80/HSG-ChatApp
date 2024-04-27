@@ -1,5 +1,5 @@
 <h2>Chat-History</h2>
-<div style = "flex: 1;">
+<div style = "flex: 1;" class="scrollable-container">
     <div *ngFor="let msg of history" style="padding-top: 10px;"p>
         <div class="message-container">
             <div class="timestamp">{{ msg.timestamp | date: 'dd MMM HH:mm' }}</div>
