@@ -1,8 +1,8 @@
 p.message {
     display: inline-block;
     align-items: center;
-    max-width: 75%;
-    min-width: 10%;
+    max-width: 120vh;
+    min-width: 10vh;
   
     margin-bottom: 15px;
     padding: 5px 15px;
@@ -27,18 +27,12 @@ z
     text-align: right; 
     margin-bottom: 5px; 
 }
-<<<<<<< HEAD
 .scrollable-container{
     height: 60vh;
     overflow-y: auto;
 }
-h2{
+
+.h2{
     font-size: 30px;
     
-=======
-
-.chat-history {
-    height: auto;
-    overflow: hidden;
->>>>>>> 49a82d51b92f9250f9b14f2dac2c492264c8841c
 }
