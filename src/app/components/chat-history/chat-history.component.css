@@ -12,6 +12,7 @@ p.message {
     background-color: #00802f;
     color: white;
     word-wrap: break-word;
+    word-break: break-all;
   }
     
 p.message.other {
