@@ -1,5 +1,5 @@
 import { CommonModule, NgIf } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 
@@ -26,15 +26,16 @@ public errorMessage = "";
 public name = "";
 public messages:Message[] = [];
 @Output() public messageToSend = new EventEmitter<Message>();
+@Input() public nickname = "";
 
-public addToChat(name: string, message: string) {
-  if (!name.trim() || !message.trim()) {
+public addToChat(nickname: string, message: string) {
+  if (!nickname.trim() || !message.trim()) {
     this.errorMessage = "Name und Nachricht dürfen nicht leer sein.";
     return;
   }
   
   const nachricht: Message = {
-    sender: name.trim(),
+    sender: nickname.trim(),
     message: message.trim(),
     timestamp: new Date()
   };

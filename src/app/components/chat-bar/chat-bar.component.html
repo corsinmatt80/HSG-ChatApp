@@ -1,13 +1,7 @@
 <h2 style="margin-top: 10px;   padding-left: 40px;;">Chat-Bar </h2>
 <div style="display: flex;">
-    <div style="margin-left: 40px; margin-top:40px; padding-right: 20px;">
-        <input
-        type="text"
-        [(ngModel)]="name"
-        class="form-control"
-        placeholder="Name einfügen..."
-      />
-        <textarea style="margin-top: 10px;"
+    <div style="margin-left: 40px; margin-top:10px; padding-right: 20px;">
+        <textarea style="height: 350px;"
             [(ngModel)]="message" 
             class="form-control" 
             placeholder="Nachricht einfügen..."  
@@ -20,8 +14,8 @@
 
         <button style="margin-top: 20px;"
             class="btn btn-primary"
-            [disabled]="!message || !name"
-            (click)="addToChat(name, message)"
+            [disabled]="!message"
+            (click)="addToChat(nickname, message)"
         >
             Absenden!
         </button>

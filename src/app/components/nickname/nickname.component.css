@@ -1,16 +1,7 @@
-main{
-    height: 70vh; 
-    overflow-y: scroll;
-}
-div.messages-container {
-    overflow-y: auto;
-    height: 100%;
-}
 .btn-primary {
     background-color: #28a745; 
     border-color: #28a745;
     color: white;
-    height: 40px;
   }
   
   .btn-primary:hover {

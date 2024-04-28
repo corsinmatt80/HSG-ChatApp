@@ -1,10 +1,32 @@
 <app-header/>
 <main>
   <div style="display: flex">
-  <app-chat-bar
-  (messageToSend)="messageSend($event)"></app-chat-bar>
-  <app-chat-history
-  [history]="chatHistory"></app-chat-history>
-</div>
+    <div *ngIf="!isEntered"
+    style="margin-right: 210px;">
+      <app-nickname 
+        (nicknameCreate)="nickname = $event"
+        (isEntered)="isEntered = $event">
+      </app-nickname>
+    </div>
+    <div *ngIf="isEntered">
+      <app-chat-bar
+        [nickname]="nickname"
+        (messageToSend)="messageSend($event)">
+      </app-chat-bar>
+    </div>
+    <app-chat-history
+      [history]="chatHistory"
+      style="margin-left: 20px;">
+    </app-chat-history>
+    <button
+    style="margin-left: 800px;margin-top: 10px;"
+    (click)="isEntered = false"
+    class="btn btn-primary"
+  >
+    Reset Nickname
+  </button>
+  </div>
+
 </main>
+
 <app-footer/>
