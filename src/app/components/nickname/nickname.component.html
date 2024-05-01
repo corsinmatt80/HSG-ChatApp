@@ -1,18 +1,42 @@
-<h2 style="padding-left: 40px;">Nickname</h2>
-<div style="margin-left: 40px;">
-  <input
-    [(ngModel)]="nickname"
-    class="form-control"
-    placeholder="Nickname hier einfügen..."
-    style = "margin-bottom: 20px;"
-  />
-  <button
-    class="btn btn-primary"
-    (click)="createNickname(nickname)"
-    [disabled]="!nickname"
-    class="btn btn-primary"
-  >
-    Kreieren!
-  </button>
-</div>
 
+<div style="margin-left: 40px; width: 60vh;padding-top: 20px;">
+  <div style = "display: flex;flex-direction: row;">
+    <input 
+      *ngIf="!showUsername"
+      [(ngModel)]="nickname" 
+      class="form-control" 
+      placeholder="Nickname hier einfügen..."
+      style="margin-bottom: 20px; display: inline-block; width: 60%;height: 43px;" />
+    <textarea
+      *ngIf="showUsername"
+      readonly
+      style="resize: none;margin-bottom: 20px; display: inline-block; width: 60%;height: 20px;background-color: lightgrey;height: 43px;"
+      class = "form-control"
+    >{{ nickname }}</textarea>
+
+  <button 
+    class="btn btn-primary" 
+    (click)="createNickname(nickname,true)" 
+    [disabled]="!nickname"
+    style="display: inline-block; width: 180px; margin-left: 10px; position: relative;padding-left: 30px; height: 43px;">
+    <img 
+      id='beforeicon' 
+      class='beforeicon' 
+      src='../../../assets/save.png'
+      style="height: 20px; width: 20px; position: absolute; top: 50%; left: 12px; transform: translateY(-50%)" />
+    Speichern
+  </button>
+  <button 
+    class="btn btn-secondary" 
+    (click)="createNickname('',false);nickname=''" 
+    [disabled]="!nickname"
+    style="display: inline-block; width:180px; margin-left: 10px; position: relative;padding-left: 30px; height: 43px;">
+    <img 
+      id='beforeicon' 
+      class='beforeicon' 
+      src='../../../assets/change-user.png'
+      style="height: 20px; width: 20px; position: absolute; top: 50%; left: 12px; transform: translateY(-50%)" />
+    User ändern
+  </button>
+  </div>
+</div>

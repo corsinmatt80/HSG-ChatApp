@@ -1,12 +1,12 @@
-<h2>Chat-History</h2>
-<div style = "flex: 1;" class = "scrollable-container">
-    <div *ngFor="let msg of history" style="padding-top: 10px;"p>
-        <div class="message-container">
-            <div class="timestamp">{{ msg.timestamp | date: 'dd MMM HH:mm' }}</div>
+<p style="margin-top: 20px;">Nachrichten Historie</p>
+<div style="flex: 1;" class="scrollable-container">
+    <div *ngFor="let msg of history" style="padding-top: 10px;display: flex; flex-direction: row;">
+        <div class="message-container" style="display: inline;">
             <p class="message">
-                <strong>{{ msg.sender }}:&nbsp;</strong>
+                <strong>{{ msg.sender }}&nbsp;</strong><br>
                 {{ msg.message }}
             </p>
+            <div class="timestamp">{{ msg.timestamp | date: 'HH:mm' }}</div>
         </div>
     </div>
 </div>

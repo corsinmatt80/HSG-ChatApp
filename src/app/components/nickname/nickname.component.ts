@@ -15,10 +15,10 @@ export class NicknameComponent {
 
   public nickname = '';
   public message = '';
+  public showUsername = false;
 
-  public createNickname(nickname: string): void {
+  public createNickname(nickname: string, showing: boolean): void {
+    this.showUsername = showing;
     this.nicknameCreate.emit(nickname);
-    this.isEntered.emit(true);
-    alert(`nickname: '${nickname}' created`);
   }
 }

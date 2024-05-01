@@ -13,3 +13,14 @@ textarea{
   background-color: #218838; 
   border-color: #1e7e34;
 }
+  
+.beforeicon {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  padding: 0;
+  border: none;
+  outline: none;
+}
