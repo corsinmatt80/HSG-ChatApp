@@ -8,9 +8,9 @@ import { NicknameComponent } from './components/nickname/nickname.component';
 import { NgIf } from '@angular/common';
 
 interface Message {
-  sender: string;
+  nickname: string;
   message: string;
-  timestamp: Date;
+  createdAt: Date;
 }
 
 @Component({

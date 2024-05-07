@@ -1,12 +1,12 @@
 <p style="margin-top: 20px;">Nachrichten Historie</p>
 <div style="flex: 1;" class="scrollable-container">
-    <div *ngFor="let msg of history" style="padding-top: 10px;display: flex; flex-direction: row;">
+    <div *ngFor="let msg of chatMessages" style="padding-top: 10px;display: flex; flex-direction: row;">
         <div class="message-container" style="display: inline;">
             <p class="message">
-                <strong>{{ msg.sender }}&nbsp;</strong><br>
+                <strong>{{ msg.nickname }}&nbsp;</strong><br>
                 {{ msg.message }}
             </p>
-            <div class="timestamp">{{ msg.timestamp | date: 'HH:mm' }}</div>
+            <div class="timestamp">{{ msg.createdAt | date: 'HH:mm' }}</div>
         </div>
     </div>
 </div>

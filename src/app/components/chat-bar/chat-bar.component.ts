@@ -1,12 +1,14 @@
 import { CommonModule, NgIf } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, DestroyRef, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
+import { ChatService } from '../shared/services/chat.service';
+import { EMPTY,tap,finalize, takeUntil, catchError } from 'rxjs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 export interface Message{
-  sender:string;
+  nickname:string;
   message:string;
-  timestamp: Date; //timestamp
+  createdAt: Date; //timestamp
 }
 
 
@@ -27,6 +29,9 @@ public name = "";
 public messages:Message[] = [];
 @Output() public messageToSend = new EventEmitter<Message>();
 @Input() public nickname = "";
+public saving = false;
+private destroyRef = inject(DestroyRef);
+constructor(private chatService: ChatService) {}
 
 public addToChat(nickname: string, message: string) {
   if (!nickname.trim() || !message.trim()) {
@@ -35,13 +40,27 @@ public addToChat(nickname: string, message: string) {
   }
   
   const nachricht: Message = {
-    sender: nickname.trim(),
+    nickname: nickname.trim(),
     message: message.trim(),
-    timestamp: new Date()
+    createdAt: new Date()
   };
-  this.messages.push(nachricht);
-  this.messageToSend.emit(nachricht);
-  this.message = "";
-  this.errorMessage = ""; 
+  
+
+  this.saving = true;
+  this.chatService
+  .addToHistory(nachricht)
+  .pipe(
+    tap(() => {
+      this.message = '';
+      this.errorMessage = '';
+    }),
+    finalize(() => (this.saving = false)),
+    takeUntilDestroyed(this.destroyRef),
+    catchError((error: Error) =>{
+      this.errorMessage = error.message;
+      console.error(error);
+      return EMPTY;
+    })
+  ).subscribe();
 }
 }
