@@ -1,7 +1,7 @@
 p.message {
     display: inline-block;
     align-items: center;
-    max-width: 120vh;
+    max-width: 90%;
     min-width: 10%;
     margin-bottom: 10px;
     padding: 5px 15px;
@@ -14,20 +14,33 @@ p.message {
     word-break: break-all;
     border: 1px solid grey;
     margin-left: 10px;
+}
+p.message-other{
     display: inline-block;
+    align-items: center;
+    max-width: 90%;  
+    min-width: 10%;  
+    margin-bottom: 10px;
+    padding: 5px 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #e5e5e5;
+    color: black;
+    word-wrap: break-word;
+    word-break: break-all;
+    border: 1px solid grey;
+    margin-left: 10px;
 }
 
 .message-container{
+    width:100%;
     display: flex;
     flex-direction: row;
     position: relative;
 }
 
-p.message.other {
-    background-color: #f0f0f0;
-    color: #333;
-    text-align: left;
-}
+
 
 .timestamp {
     font-size: 0.75rem;

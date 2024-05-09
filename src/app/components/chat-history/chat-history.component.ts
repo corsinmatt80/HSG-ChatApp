@@ -14,6 +14,7 @@ import { ChatService } from '../shared/services/chat.service';
 })
 export class ChatHistoryComponent {
   @Input() public history : Message[] = [];
+  @Input() public nickname = "";
   public chatMessages : Message[] = [];
   public errorMessage!: string;
 

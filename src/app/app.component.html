@@ -7,11 +7,8 @@
       <app-chat-bar [nickname]="nickname" (messageToSend)="messageSend($event)">
       </app-chat-bar>
     </div>
-
-    <app-chat-history [history]="chatHistory" style="margin-left: 20px;">
+    <app-chat-history [nickname]="nickname" [history]="chatHistory" style="margin-left: 20px;">
     </app-chat-history>
   </div>
-
 </main>
-
 <app-footer />
