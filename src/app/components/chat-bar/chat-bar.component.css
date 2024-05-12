@@ -1,6 +1,7 @@
 textarea{
     width: 40vh;
     box-sizing: border-box;
+    background-color: #f4f4f4;
 }
 
 .btn-primary {

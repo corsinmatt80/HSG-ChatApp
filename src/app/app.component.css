@@ -1,7 +1,7 @@
 main{
     height: 75vh; 
     overflow-y: scroll;
-    background: #f4f4f4;
+    background: white;
 }
 div.messages-container {
     overflow-y: auto;

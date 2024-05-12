@@ -1,22 +1,26 @@
 footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     background-color: #00802f;
     text-align: center;
     padding: 5px;
     color: white;
-
     height: 10vh;
   }
   
   footer a {
+
     color: inherit;
   }
   
   footer p {
-    margin: 0;
-    font-size: 18px;
+    margin: 5;
+    font-size: 20px;
   }
 
   footer h1{
+    margin: 5;
     color: inherit;
     font-size: 14px;
     
